@@ -232,6 +232,7 @@ def just_try(game_field, me):
 
     if (game_field[1][1]) == "| ":
         game_field[1][1] = me
+        flag = True
     else:
         flag = False
         for i in range(len(angle)):
@@ -253,11 +254,13 @@ def just_try(game_field, me):
         if flag == False:
             for i in range(len(game_field)):
                  for j in range(len(game_field[i])):
-                    if (game_field[i][j]) == "| ":
-                        game_field[i][j]=me
-                        flag = True
-                        break
-                 break
+                        if (game_field[i][j]) == "| ":
+                              game_field[i][j]=me
+                              flag = True
+                              break
+                 if flag == True:
+                    break
+    return flag
 
 
 
@@ -299,7 +302,8 @@ def tic_tac_toe_bot():
             print(tu[-1], "turn now")
             if try_to_win(game_field, me) == False:
                 if try_not_to_lose(game_field, me, not_me) == False:
-                    just_try(game_field, me)
+                   if just_try(game_field, me)==False:
+                    print("wrong", end="|")
             for i in range(len(game_field)):
                 for j in range(len(game_field[i])):
                     print(game_field[i][j], end="|")
