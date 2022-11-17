@@ -1,0 +1,4 @@
+{'fio': 'ivan petrov', 'phone': '12345'}
+{'fio': 'max petrov', 'phone': '12333345'}
+{'fio': 'ivan petrov', 'phone': '12333245'}
+{'fio': 'test', 'phone': '123123'}
